@@ -1,0 +1,5 @@
+C:/Users/zampo/OneDrive/Рабочий стол/c-template-v2-master/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/zampo/OneDrive/Рабочий стол/c-template-v2-master/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/zampo/OneDrive/Рабочий стол/c-template-v2-master/out/build/x64-Debug/hm1/CMakeFiles/hm1.dir
+C:/Users/zampo/OneDrive/Рабочий стол/c-template-v2-master/out/build/x64-Debug/hm1/CMakeFiles/edit_cache.dir
+C:/Users/zampo/OneDrive/Рабочий стол/c-template-v2-master/out/build/x64-Debug/hm1/CMakeFiles/rebuild_cache.dir
