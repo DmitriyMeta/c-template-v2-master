@@ -1,6 +1,5 @@
 import random
 import time
-start_time = time.time()
 def QuickSort(A, l, r):
     if l >= r:
         return 
@@ -20,9 +19,15 @@ def QuickSort(A, l, r):
                 QuickSort(A, l, j)
                 QuickSort(A, i, r)
 alist=[]
+t = []
 for i in range(100):
   for i in range(1000):
     alist.append(random.randint(1, 100))
   alist = [int(x) for x in alist]
+  start_time = time.time()
   QuickSort(alist, 0, 99)
-print(time.time()-start_time)
+  t.append(time.time() - start_time)
+K = 0
+for i in range(100):
+    K = K + t[i]
+print(K)

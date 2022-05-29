@@ -4,7 +4,6 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
-// Функция быстрой сортировки
 void quickSort(int *numbers, int left, int right)
 {
   int pivot; 
@@ -47,15 +46,20 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    unsigned int start_time = clock();
+    unsigned int b[100];
     for (int j = 0; j < 100; j++) {
         int arr[1000];
-        for (int i = 0; i < int((sizeof(arr) / sizeof(arr[0]))); i++)
+        for (int i = 0; i < int((sizeof(arr) / sizeof(arr[0]))); i++) {
             arr[i] = rand() % 100 + 1;
-
+        }
+        unsigned int start_time = clock();
         quickSort(arr, 0, 99);
+        b[j]=clock() - start_time;
+        cout << b[j] << endl;
     }
-    unsigned int end_time = clock();
-    unsigned int search_time = end_time - start_time;
-    cout << search_time / 1000.0 << endl;
+    unsigned int M = 0;
+    for (int i = 0; i < 100; ++i) {
+      M = M + b[i];
+    }
+    cout << M / 1000.0 << endl;
 }

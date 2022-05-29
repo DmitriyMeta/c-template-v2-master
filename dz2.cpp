@@ -4,24 +4,24 @@
 template <unsigned N> class Vector
 {
   private:
-    int *t;
+    int *temp;
     unsigned size;
     unsigned capacity;
 
   public:
-    Vector() : t(nullptr), size(0), capacity(N) { t = new int[N]; }
+    Vector() : temp(nullptr), size(0), capacity(N) { temp = new int[N]; }
     void add(int value)
     {
         if (capacity == size) {
             capacity *= 2;
             int *p = new int[capacity];
             for (unsigned i = 0; i < size; ++i) {
-                p[i] = t[i];
+                p[i] = temp[i];
             }
-            delete[] t;
-            t = p;
+            delete[] temp;
+            temp = p;
         }
-        t[size] = value;
+        temp[size] = value;
         size++;
     }
     void pop()
@@ -31,15 +31,15 @@ template <unsigned N> class Vector
             capacity = size;
             int *p = new int[capacity];
             for (unsigned i = 0; i < size; ++i) {
-                p[i] = t[i];
+                p[i] = temp[i];
             }
-            delete[] t;
-            t = p;
+            delete[] temp;
+            temp = p;
         }
     }
 
     Vector(const Vector &other)
-        : t(new int[other.size]), size(other.size), capacity(other.size)
+        : temp(new int[other.size]), size(other.size), capacity(other.size)
     {
     }
 
@@ -48,12 +48,12 @@ template <unsigned N> class Vector
         if (this == &other) {
             return *this;
         }
-        delete[] t;
+        delete[] temp;
         size = other.size;
         capacity = other.size;
-        t = new int[size];
+        temp = new int[size];
         for (unsigned i = 0; i < size; ++i) {
-            t[i] = other.t[i];
+            temp[i] = other.temp[i];
         }
         return *this;
     }
@@ -65,22 +65,22 @@ template <unsigned N> class Vector
         if (i >= size) {
             throw std::runtime_error("error");
         }
-        return t[i];
+        return temp[i];
     }
 
-    int *begin() { return t; }
+    int *begin() { return temp; }
 
-    int *end() { return t + size; }
+    int *end() { return temp + size; }
 
-    Vector(int *begin, int const *end) : t(nullptr), size(0), capacity(N)
+    Vector(int *begin, int const *end) : temp(nullptr), size(0), capacity(N)
     {
-        t = new int[N];
+        temp = new int[N];
         for (auto *i = begin; i != end; i++) {
             add(*i);
         }
     }
 
-    ~Vector() { delete[] t; }
+    ~Vector() { delete[] temp; }
 };
 
 int main()

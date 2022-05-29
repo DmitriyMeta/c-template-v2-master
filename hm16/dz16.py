@@ -8,6 +8,6 @@ for i in range (1000):
   y = 100*x
   dx = x[1] - x[0]
   t.append(np.sum(y*dx)-450)
-print(t);
-plt.plot(t);
+print(t)
+plt.plot(t)
 plt.show()
